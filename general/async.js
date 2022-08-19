@@ -9,3 +9,6 @@ let getName = async(id) => {
 getName(1)
     .then(res => console.log(res))
     .catch(err => console.log(err));
+
+//Geovanny E. Villa Sánchez
+//KikeViS
