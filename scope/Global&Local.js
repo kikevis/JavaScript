@@ -12,3 +12,6 @@ function miNombre(){
 
 miNombre();
 console.log(MiApellido); //Local not defined
+
+//Geovanny E. Villa Sánchez
+//KikeViS

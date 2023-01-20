@@ -9,3 +9,14 @@ console.log(typeof a);
 var b = 4 * "7";
 typeof b;
 console.log(typeof b);
+
+var c = Number(a);
+typeof c;
+console.log(typeof c);
+
+var d = String(b);
+typeof d;
+console.log(typeof d);
+
+//Geovanny E. Villa Sánchez
+//KikeViS
