@@ -20,7 +20,7 @@ const from = document.querySelector('#form')
 // });
 
 // h1.innerHTML = 'Manipulacion del DOM básica JS innerHTML';
-// h1.innerText = 'Manipulacion del DOM básica JS innerText';
+h1.innerText = 'Manipulacion del DOM básica JS - @KikeViS - innerText';
 // console.log(h1.getAttribute('pantalla'));
 // console.log(h1.setAttribute('pantalla', 'pantalla2'));
 
