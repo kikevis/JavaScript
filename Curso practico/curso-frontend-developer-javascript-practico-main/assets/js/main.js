@@ -15,61 +15,32 @@ productDetailCloseIcon.addEventListener('click', closeProductDetailAside); // ce
 
 // menú correo
 function toggleDesktopMenu() {
-  // const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
-
-  // if (!isAsideClosed) {
-  //   shoppingCartContainer.classList.add('inactive');
-  // }
-
   shoppingCartContainer.classList.add('inactive');
-
   closeProductDetailAside();
-
   desktopMenu.classList.toggle('inactive');
 }
 
 // menú mobile
 function toggleMobileMenu() {
-  // const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
-
-  // if (!isAsideClosed) {
-  //   shoppingCartContainer.classList.add('inactive');
-  // }
-
   shoppingCartContainer.classList.add('inactive');
   closeProductDetailAside();
-
   mobileMenu.classList.toggle('inactive');
 }
 
 // menú carrito
 function toggleCarritoAside() {
-  // const isAsideClosed = desktopMenu.classList.contains('inactive');
-
-  // if (!isAsideClosed) {
-  //   desktopMenu.classList.add('inactive');
-  // }
-
   desktopMenu.classList.add('inactive');
-
-  // const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
-
-  // if (!isMobileMenuClosed) {
-  //   mobileMenu.classList.add('inactive');
-  // }
-
   mobileMenu.classList.add('inactive');
-
-  // const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
-
-  // if (!isProductDetailClosed) {
-  //   productDetailContainer.classList.add('inactive');
-  // }
-
   productDetailContainer.classList.add('inactive');
-
   shoppingCartContainer.classList.toggle('inactive');
 }
+
+// function toggleProductDetailAside(){
+//   shoppingCartContainer.classList.add('inactive');
+//   desktopMenu.classList.add('inactive');
+//   mobileMenu.classList.add('inactive');
+//   productDetailContainer.classList.toggle('inactive');
+// }
 
 // open producto
 function openProductDetailAside() {
@@ -87,43 +58,42 @@ function closeProductDetailAside() {
 // lista de productos
 const productList = [];
 productList.push({
-  name: 'Bike',
-  price: 50000,
-  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  name: 'Portátil Ryzen 5',
+  categorie: 'Portatiles',
+  price: '2.000.000',
+  image: 'https://images.unsplash.com/photo-1640955014216-75201056c829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
 });
 productList.push({
-  name: 'Pantalla',
-  price: 450000,
-  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-});
-productList.push({
-  name: 'Compu',
-  price: 100000,
-  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  name: 'Portátil Ryzen 7',
+  categorie: 'Portatiles',
+  price: '3.000.000',
+  image: 'https://images.unsplash.com/photo-1640955014216-75201056c829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
 });
 
 function renderProducts(arr) {
   for (product of arr) {
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
+    const productCard = document.createElement('div'); //div
+    productCard.classList.add('product-card'); //clase
 
     // product= {name, price, image} -> product.image
-    const productImg = document.createElement('img');
-    productImg.setAttribute('src', product.image);
-    productImg.addEventListener('click', openProductDetailAside);
+    const productImg = document.createElement('img'); //img
+    productImg.setAttribute('src', product.image); //atributo
+    productImg.addEventListener('click', openProductDetailAside); //evento
 
-    const productInfo = document.createElement('div');
-    productInfo.classList.add('product-info');
+    const productInfo = document.createElement('div'); //div
+    productInfo.classList.add('product-info'); //clase
 
-    const productInfoDiv = document.createElement('div');
+    const productInfoDiv = document.createElement('div'); //div
 
-    const productPrice = document.createElement('p');
-    productPrice.innerText = '$' + product.price;
-    const productName = document.createElement('p');
-    productName.innerText = product.name;
+    const productPrice = document.createElement('p'); //p
+    productPrice.innerText = '$' + product.price; //precio
+    const productName = document.createElement('p'); //p
+    productName.innerText = product.name; //nombre
 
     productInfoDiv.appendChild(productPrice);
     productInfoDiv.appendChild(productName);
+
+    // productInfoDiv.append(productPrice, productName);
 
     const productInfoFigure = document.createElement('figure');
     const productImgCart = document.createElement('img');
@@ -134,8 +104,12 @@ function renderProducts(arr) {
     productInfo.appendChild(productInfoDiv);
     productInfo.appendChild(productInfoFigure);
 
+    // productInfo.append(productInfoDiv, productInfoFigure);
+
     productCard.appendChild(productImg);
     productCard.appendChild(productInfo);
+
+    // productCard.append(productImg, productInfo);
 
     cardsContainer.appendChild(productCard);
   }
