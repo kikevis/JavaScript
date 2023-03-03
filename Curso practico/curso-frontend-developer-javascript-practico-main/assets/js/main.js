@@ -72,10 +72,10 @@ productList.push({
 
 function renderProducts(arr) {
   for (product of arr) {
+    // CARD
     const productCard = document.createElement('div'); //div
     productCard.classList.add('product-card'); //clase
 
-    // product= {name, price, image} -> product.image
     const productImg = document.createElement('img'); //img
     productImg.setAttribute('src', product.image); //atributo
     productImg.addEventListener('click', openProductDetailAside); //evento
@@ -90,27 +90,16 @@ function renderProducts(arr) {
     const productName = document.createElement('p'); //p
     productName.innerText = product.name; //nombre
 
-    productInfoDiv.appendChild(productPrice);
-    productInfoDiv.appendChild(productName);
-
-    // productInfoDiv.append(productPrice, productName);
+    //
+    productInfoDiv.append(productPrice, productName);
 
     const productInfoFigure = document.createElement('figure');
     const productImgCart = document.createElement('img');
     productImgCart.setAttribute('src', 'assets/img/icons/bt_add_to_cart.svg');
 
     productInfoFigure.appendChild(productImgCart);
-
-    productInfo.appendChild(productInfoDiv);
-    productInfo.appendChild(productInfoFigure);
-
-    // productInfo.append(productInfoDiv, productInfoFigure);
-
-    productCard.appendChild(productImg);
-    productCard.appendChild(productInfo);
-
-    // productCard.append(productImg, productInfo);
-
+    productInfo.append(productInfoDiv, productInfoFigure);
+    productCard.append(productImg, productInfo);
     cardsContainer.appendChild(productCard);
   }
 }
